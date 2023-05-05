@@ -1,0 +1,23 @@
+.container{
+    width: 500px;
+    border: 2px solid #333;
+    overflow-x: scroll;
+}
+
+.item1{
+    display: inline;
+    padding: 0 200px;
+    border: 2px solid red;
+}
+
+.item2{
+    display: inline;
+    padding: 0 200px;
+    border: 2px solid green;
+}
+
+.item3{
+    display: inline;
+    padding: 0 200px;
+    border: 2px solid blue;
+}

@@ -1,0 +1,15 @@
+.counter {
+  padding: 2rem;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  border: 1px solid #333;
+}
+
+.counter.hover {
+  background-color: #eee;
+}
+
+.counter.fancy {
+  border: 1px solid orangered;
+}

@@ -1,0 +1,6 @@
+export const INITIATE_POSTS = "INITIATE_POSTS";
+export const POSTS_SUCCESS = "POSTS_SUCCESS";
+export const POSTS_FAILED = "POSTS_FAILED";
+export const INITIATE_TODOS = "INITIATE_TODOS";
+export const TODOS_SUCCESS = "TODOS_SUCCESS";
+export const TODOS_FAILED = "TODOS_FAILED";

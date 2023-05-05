@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eee;
+  padding: 1rem;
+}
+
+.main__nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.main__nav__item {
+}
+
+.main__nav__link {
+  text-decoration: none;
+  color: #777;
+  font-size: 1.6rem;
+  transition: color 0.5s;
+  display: inline-block;
+  padding: 1rem 1.2rem;
+}
+
+.main__nav__link:hover,
+.main__nav__link.active {
+  color: #000;
+}
