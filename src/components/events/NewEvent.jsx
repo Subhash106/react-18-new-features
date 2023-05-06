@@ -1,48 +1,27 @@
 import { useReducer } from "react";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
-import { getAuthToken } from "../../utils/getAuthToken";
 import Button from "../buttons";
 import { useEventContext } from "./EventContext";
 import eventReducer from "./eventReducer";
 import styles from "./styles.module.css";
+import moment from "moment";
 
 const NewEvent = () => {
-  const { setShowEvents } = useEventContext();
-  const [event, dispatch] = useReducer(eventReducer, {
-    title: "",
-    description: "",
-    date: "",
-    id: "",
-    image: "",
-  });
-
-  const { title, description, date, image } = event;
-
-  const eventSubmitHandler = (e) => {
-    const token = getAuthToken();
-    e.preventDefault();
-    fetch("http://localhost:3002/events", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-      body: JSON.stringify({ ...event, id: String(Date.now()) }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("data", data);
-        setShowEvents(true);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  const { event, eventSubmitHandler } = useEventContext();
+  const [{ id, title, description, date, image }, dispatch] = useReducer(
+    eventReducer,
+    event
+  );
 
   return (
     <div>
       <h2>New Event</h2>
-      <form className={styles.new__event} onSubmit={eventSubmitHandler}>
+      <form
+        className={styles.new__event}
+        onSubmit={(e) => {
+          e.preventDefault();
+          eventSubmitHandler({ id, title, description, date, image });
+        }}
+      >
         <div className={styles.form__group}>
           <label htmlFor="date">Date</label>
           <input
@@ -50,7 +29,7 @@ const NewEvent = () => {
             name="date"
             id="date"
             className={styles.form__input}
-            value={date}
+            value={moment(date).format("YYYY-MM-DD")}
             onChange={(e) =>
               dispatch({ type: "UPDATE_DATE", date: e.target.value })
             }
@@ -96,7 +75,8 @@ const NewEvent = () => {
           />
         </div>
         <div className={styles.form__actions}>
-          <Button>Save</Button>
+          <Button onClick={() => dispatch({ type: "RESET" })}>Reset</Button>
+          <Button primary>Save</Button>
         </div>
       </form>
     </div>

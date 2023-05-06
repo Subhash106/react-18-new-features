@@ -4,9 +4,11 @@ import styles from "./styles.module.css";
 
 import NewEvent from "./NewEvent";
 import { useEventContext } from "./EventContext";
+import { useAuthContext } from "../authentication/AuthContext";
 
 const Events = () => {
   const { events, showEvents, setShowEvents } = useEventContext();
+  const { token } = useAuthContext();
 
   return (
     <div>
@@ -15,7 +17,15 @@ const Events = () => {
         <Button primary onClick={() => setShowEvents(true)}>
           All Events
         </Button>
-        <Button onClick={() => setShowEvents(false)}>New Event</Button>
+        {token && (
+          <Button
+            onClick={() => {
+              setShowEvents(false);
+            }}
+          >
+            New Event
+          </Button>
+        )}
       </div>
       <div>
         {showEvents && (

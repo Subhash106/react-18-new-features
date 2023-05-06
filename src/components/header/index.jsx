@@ -1,7 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import styles from "./style.module.css";
+import { logout } from "../../utils/auth";
+import Button from "../buttons";
+import { useAuthContext } from "../authentication/AuthContext";
 
 const Header = () => {
+  const { token } = useAuthContext();
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -118,18 +123,25 @@ const Header = () => {
             Events
           </NavLink>
         </li>
-        <li className={styles.main__nav__item}>
-          <NavLink
-            className={(active) =>
-              active
-                ? `${styles.main__nav__link} ${styles.active}`
-                : `${styles.main__nav__link}`
-            }
-            to="/login?mode=signin"
-          >
-            Login
-          </NavLink>
-        </li>
+        {!token && (
+          <li className={styles.main__nav__item}>
+            <NavLink
+              className={(active) =>
+                active
+                  ? `${styles.main__nav__link} ${styles.active}`
+                  : `${styles.main__nav__link}`
+              }
+              to="/login?mode=signin"
+            >
+              Login
+            </NavLink>
+          </li>
+        )}
+        {token && (
+          <li className={styles.main__nav__item}>
+            <Button onClick={logout}>Logout</Button>
+          </li>
+        )}
       </ul>
     </header>
   );

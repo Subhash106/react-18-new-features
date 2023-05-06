@@ -2,11 +2,8 @@ import classNames from "classnames";
 import { useState } from "react";
 import Button from "../buttons";
 import styles from "./styles.module.css";
-import {
-  Link,
-  Redirect,
-  useLocation,
-} from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { logout } from "../../utils/auth";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -38,6 +35,10 @@ const Login = () => {
           }
           setError("");
           localStorage.setItem("token", token);
+          // set the expiration duration 1hr
+          const expirationDate = new Date();
+          expirationDate.setHours(expirationDate.getHours() + 1);
+          localStorage.setItem("expirationDate", expirationDate.toISOString());
           setIsRedirect(true);
         })
         .catch((error) => {
@@ -48,7 +49,7 @@ const Login = () => {
   };
 
   if (isRedirect) {
-    return <Redirect to="/events" />;
+    window.location.href = "/";
   }
 
   return (

@@ -1,18 +1,11 @@
-import { getAuthToken } from "../../utils/getAuthToken";
+import { useAuthContext } from "../authentication/AuthContext";
 import Button from "../buttons";
+import { useEventContext } from "./EventContext";
 import styles from "./styles.module.css";
 
 const Event = ({ id, title, description, image, date }) => {
-  const eventDeleteHandler = () => {
-    const token = getAuthToken();
-    fetch("http://localhost:3002/events/" + id, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-    });
-  };
+  const { token } = useAuthContext();
+  const { eventDeleteHandler, setShowEvents, setEvent } = useEventContext();
 
   return (
     <>
@@ -24,10 +17,20 @@ const Event = ({ id, title, description, image, date }) => {
           </h2>
           <p>{description}</p>
         </div>
-        <div className={styles.event__actions}>
-          <Button primary>Edit</Button>
-          <Button onClick={eventDeleteHandler}>Delete</Button>
-        </div>
+        {token && (
+          <div className={styles.event__ctas}>
+            <Button
+              primary
+              onClick={() => {
+                setEvent({ id, title, description, image, date });
+                setShowEvents(false);
+              }}
+            >
+              Edit
+            </Button>
+            <Button onClick={() => eventDeleteHandler(id)}>Delete</Button>
+          </div>
+        )}
       </div>
     </>
   );

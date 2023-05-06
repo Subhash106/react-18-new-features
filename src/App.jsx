@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import Albums from "./components/albums";
@@ -14,8 +14,22 @@ import ClassicalRedux from "./components/classicalRedux";
 import MusicPlayer from "./components/musicPlayer";
 import Login from "./components/authentication/Login";
 import Events from "./components/events";
+import SecureRoute from "./components/authentication/SecureRoute";
+import { useAuthContext } from "./components/authentication/AuthContext";
+import { logout } from "./utils/auth";
 
 export default function App() {
+  const { expirationDuration, token } = useAuthContext();
+
+  useEffect(() => {
+    if (!token) return;
+    if (expirationDuration !== "EXPIRED") {
+      setTimeout(logout, expirationDuration);
+    } else {
+      logout();
+    }
+  }, []);
+
   return (
     <Layout>
       <Header />
@@ -30,8 +44,10 @@ export default function App() {
           <Route path="/todos" component={Todos} />
           <Route path="/classical-redux" component={ClassicalRedux} />
           <Route path="/music-player" component={MusicPlayer} />
-          <Route path="/events" component={Events} />
           <Route path="/login" component={Login} />
+          <SecureRoute>
+            <Route path="/events" component={Events} />
+          </SecureRoute>
         </Switch>
       </Suspense>
     </Layout>

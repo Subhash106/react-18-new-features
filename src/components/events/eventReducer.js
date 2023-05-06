@@ -8,6 +8,8 @@ const eventReducer = (state, action) => {
       return { ...state, description: action.description };
     case "UPDATE_IMAGE":
       return { ...state, image: action.image };
+    case "RESET":
+      return { ...state, id: "", title: "", description: "", image: "" };
     default:
       return state;
   }
