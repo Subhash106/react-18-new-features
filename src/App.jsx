@@ -11,7 +11,7 @@ import Posts from "./components/posts";
 import Todos from "./components/todos";
 import Post from "./components/posts/post";
 import ClassicalRedux from "./components/classicalRedux";
-import MusicPlayer from "./components/musicPlayer";
+import MusicPlayer from "./components/musicPlayer/MusicContainer";
 import Login from "./components/authentication/Login";
 import Events from "./components/events";
 import SecureRoute from "./components/authentication/SecureRoute";

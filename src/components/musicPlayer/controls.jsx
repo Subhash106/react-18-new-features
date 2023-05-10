@@ -1,19 +1,23 @@
-import { usePlayerContext } from ".";
+import { useMusicContext } from "./MusicContext";
 
 const Controls = () => {
-  const { songs, titleClickHandler, currentSong, modeHandler, mode } =
-    usePlayerContext();
-
-  console.log("currentSong in controls", currentSong);
-  console.log("songs in controls", songs);
+  const {
+    isPending,
+    prevHandler,
+    nextHandler,
+    currentSong: { title = "", author = "" },
+    modeHandler,
+    mode,
+  } = useMusicContext();
 
   return (
     <div>
+      {isPending && <p>Loading...</p>}
       <h2>Music Controls</h2>
-      <p>{`${currentSong?.title} - ${currentSong?.author}`}</p>
+      <p>{author && title && `${title} - ${author}`}</p>
       <div className="buttons">
-        <button>Prev</button>
-        <button>Next</button>
+        <button onClick={prevHandler}>Prev</button>
+        <button onClick={nextHandler}>Next</button>
         <button onClick={modeHandler}>{mode}</button>
       </div>
     </div>
