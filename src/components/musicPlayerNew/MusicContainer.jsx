@@ -2,6 +2,9 @@ import React, { useTransition, useState } from "react";
 import MusicContext from "./MusicContext";
 import Controls from "./controls";
 import Songs from "./songs";
+import Checkbox from "../checkbox";
+import SearchController from "../Search";
+import Users from "../users";
 
 const songsList = [
   { id: "1", title: "Kuch kuch hota hai", author: "Lata" },
@@ -117,6 +120,7 @@ const MusicPlayer = ({ children }) => {
 const MusicContainer = () => {
   return (
     <MusicPlayer>
+      <Users />
       <Controls />
       <Songs />
     </MusicPlayer>

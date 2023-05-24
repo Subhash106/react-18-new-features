@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It should render the snapshot 1`] = `
+<div
+  className="counter"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <p>
+    Subash's count
+  </p>
+  <p>
+    0
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Add 1
+  </button>
+</div>
+`;
+
+exports[`It should render the snapshot 2`] = `
+<div
+  className="counter hover"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <p>
+    Subash's count
+  </p>
+  <p>
+    0
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Add 1
+  </button>
+</div>
+`;
+
+exports[`It should render the snapshot 3`] = `
+<div
+  className="counter"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <p>
+    Subash's count
+  </p>
+  <p>
+    0
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Add 1
+  </button>
+</div>
+`;

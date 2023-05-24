@@ -1,27 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684458404210" clover="3.2.0">
-  <project timestamp="1684458404210" name="All files">
-    <metrics statements="9" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="5" elements="16" coveredelements="12" complexity="0" loc="9" ncloc="9" packages="1" files="4" classes="4"/>
-    <file name="for-bar-baz.js" path="/Users/subhashchandra/react-concepts/src/tests/for-bar-baz.js">
-      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="3" count="0" type="stmt"/>
-    </file>
-    <file name="forEach.js" path="/Users/subhashchandra/react-concepts/src/tests/forEach.js">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="3" count="2" type="stmt"/>
-    </file>
-    <file name="sum.js" path="/Users/subhashchandra/react-concepts/src/tests/sum.js">
-      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="2" count="1" type="stmt"/>
-    </file>
-    <file name="users.js" path="/Users/subhashchandra/react-concepts/src/tests/users.js">
-      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="7" count="1" type="stmt"/>
-      <line num="8" count="0" type="stmt"/>
-    </file>
+<coverage generated="1684551995904" clover="3.2.0">
+  <project timestamp="1684551995905" name="All files">
+    <metrics statements="47" coveredstatements="44" conditionals="12" coveredconditionals="12" methods="23" coveredmethods="20" elements="82" coveredelements="76" complexity="0" loc="47" ncloc="47" packages="5" files="8" classes="8"/>
+    <package name="components.Search">
+      <metrics statements="15" coveredstatements="15" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
+      <file name="index.jsx" path="/Users/subhashchandra/react-concepts/src/components/Search/index.jsx">
+        <metrics statements="15" coveredstatements="15" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="33" count="5" type="stmt"/>
+        <line num="35" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.checkbox">
+      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="index.jsx" path="/Users/subhashchandra/react-concepts/src/components/checkbox/index.jsx">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.counterController">
+      <metrics statements="11" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="3"/>
+      <file name="counter.jsx" path="/Users/subhashchandra/react-concepts/src/components/counterController/counter.jsx">
+        <metrics statements="11" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="3"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="10" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.users">
+      <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <file name="index.jsx" path="/Users/subhashchandra/react-concepts/src/components/users/index.jsx">
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="tests">
+      <metrics statements="9" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="5"/>
+      <file name="for-bar-baz.js" path="/Users/subhashchandra/react-concepts/src/tests/for-bar-baz.js">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
+      <file name="forEach.js" path="/Users/subhashchandra/react-concepts/src/tests/forEach.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+      </file>
+      <file name="sum.js" path="/Users/subhashchandra/react-concepts/src/tests/sum.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+      <file name="users.js" path="/Users/subhashchandra/react-concepts/src/tests/users.js">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

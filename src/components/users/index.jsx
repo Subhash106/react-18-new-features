@@ -1,35 +1,34 @@
-import { useEffect } from "react";
-import { useRef } from "react";
 import { useState } from "react";
+import axios from "axios";
+
 import styles from "./style.module.css";
-import wait from "../delay";
 
-const Users = ({ search }) => {
+const Users = () => {
   const [users, setUsers] = useState([]);
-  const fetchDataRef = useRef(true);
 
-  useEffect(() => {
-    async function myFunc() {
-      if (!fetchDataRef.current) {
-        await wait(5);
-        fetch(`https://jsonplaceholder.typicode.com/posts?title_like=${search}`)
-          .then((res) => res.json())
-          .then((data) => setUsers(data));
-      }
-      fetchDataRef.current = false;
-    }
-    myFunc();
-  }, [search]);
+  const getUsers = async () => {
+    const { data } = await axios.get(
+      `https://jsonplaceholder.typicode.com/posts`
+    );
 
-  console.log("users", users);
+    setUsers(data);
+  };
 
   return (
     <div>
-      <ul className={styles.users_list}>
-        {users.map(({ title, id }) => (
-          <li key={id}>{title}</li>
-        ))}
-      </ul>
+      <h2>Users</h2>
+      {!users.length > 0 && (
+        <p>
+          No users. <button onClick={getUsers}>Fetch users</button>
+        </p>
+      )}
+      {users.length > 0 && (
+        <ul className={styles.users_list}>
+          {users.map(({ title, id }) => (
+            <li key={id}>{title}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
