@@ -3,10 +3,16 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = { status: "idle", count: 0 };
 
 const asyncAPI = (amount) =>
-  new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({ count: amount });
-    }, 2000);
+  new Promise((resolve, reject) => {
+    if (Math.random() > 0.5) {
+      setTimeout(() => {
+        resolve({ count: amount });
+      }, 2000);
+    } else {
+      setTimeout(() => {
+        reject();
+      }, 3000);
+    }
   });
 
 export const incrementedAsync = createAsyncThunk(
@@ -43,6 +49,9 @@ const counterSlice = createSlice({
       .addCase(incrementedAsync.fulfilled, (state, action) => {
         state.status = "idle";
         state.count += action.payload;
+      })
+      .addCase(incrementedAsync.rejected, (state) => {
+        state.status = "idle";
       });
   },
 });
