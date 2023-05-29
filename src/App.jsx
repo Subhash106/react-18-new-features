@@ -17,6 +17,7 @@ import Events from "./components/events";
 import SecureRoute from "./components/authentication/SecureRoute";
 import { useAuthContext } from "./components/authentication/AuthContext";
 import { logout } from "./utils/auth";
+import Form from "./components/form";
 
 export default function App() {
   const { expirationDuration, token } = useAuthContext();
@@ -37,6 +38,7 @@ export default function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/counter" component={Counter} />
+          <Route path="/form" component={Form} />
           <Route path="/albums" component={Albums} />
           <Route path="/posts/:postId" component={Post} />
           <Route path="/posts" component={Posts} />

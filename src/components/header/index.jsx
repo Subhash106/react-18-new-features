@@ -34,6 +34,18 @@ const Header = () => {
                 ? `${styles.main__nav__link} ${styles.active}`
                 : `${styles.main__nav__link}`
             }
+            to="/form"
+          >
+            Form
+          </NavLink>
+        </li>
+        <li className={styles.main__nav__item}>
+          <NavLink
+            className={(active) =>
+              active
+                ? `${styles.main__nav__link} ${styles.active}`
+                : `${styles.main__nav__link}`
+            }
             to="/counter"
           >
             Counter

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684899284451" clover="3.2.0">
-  <project timestamp="1684899284451" name="All files">
-    <metrics statements="59" coveredstatements="56" conditionals="13" coveredconditionals="13" methods="30" coveredmethods="27" elements="102" coveredelements="96" complexity="0" loc="59" ncloc="59" packages="6" files="11" classes="11"/>
+<coverage generated="1685334845838" clover="3.2.0">
+  <project timestamp="1685334845839" name="All files">
+    <metrics statements="130" coveredstatements="87" conditionals="33" coveredconditionals="15" methods="62" coveredmethods="34" elements="225" coveredelements="136" complexity="0" loc="130" ncloc="130" packages="10" files="18" classes="18"/>
     <package name="components.Search">
       <metrics statements="15" coveredstatements="15" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
       <file name="index.jsx" path="/Users/subhashchandra/react-concepts/src/components/Search/index.jsx">
@@ -51,6 +51,50 @@
         <line num="22" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="components.form">
+      <metrics statements="15" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="index.jsx" path="/Users/subhashchandra/react-concepts/src/components/form/index.jsx">
+        <metrics statements="15" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="35" type="stmt"/>
+        <line num="15" count="35" type="stmt"/>
+        <line num="17" count="35" type="stmt"/>
+        <line num="18" count="35" type="stmt"/>
+        <line num="20" count="35" type="stmt"/>
+        <line num="23" count="34" type="stmt"/>
+        <line num="25" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="29" count="34" type="stmt"/>
+        <line num="32" count="35" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="38" count="35" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.input">
+      <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="index.jsx" path="/Users/subhashchandra/react-concepts/src/components/input/index.jsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.posts">
+      <metrics statements="9" coveredstatements="1" conditionals="3" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="index.jsx" path="/Users/subhashchandra/react-concepts/src/components/posts/index.jsx">
+        <metrics statements="9" coveredstatements="1" conditionals="3" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+      </file>
+    </package>
     <package name="components.simpleCounter">
       <metrics statements="12" coveredstatements="12" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="7"/>
       <file name="counterWithCustomHook.js" path="/Users/subhashchandra/react-concepts/src/components/simpleCounter/counterWithCustomHook.js">
@@ -86,6 +130,66 @@
         <line num="14" count="1" type="stmt"/>
         <line num="17" count="2" type="stmt"/>
         <line num="28" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="store">
+      <metrics statements="45" coveredstatements="14" conditionals="15" coveredconditionals="0" methods="24" coveredmethods="4"/>
+      <file name="counter-slice.jsx" path="/Users/subhashchandra/react-concepts/src/store/counter-slice.jsx">
+        <metrics statements="28" coveredstatements="6" conditionals="5" coveredconditionals="0" methods="14" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+      </file>
+      <file name="index.jsx" path="/Users/subhashchandra/react-concepts/src/store/index.jsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+      </file>
+      <file name="posts-api-slice.jsx" path="/Users/subhashchandra/react-concepts/src/store/posts-api-slice.jsx">
+        <metrics statements="8" coveredstatements="2" conditionals="8" coveredconditionals="0" methods="6" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+      </file>
+      <file name="todo-api-slice.jsx" path="/Users/subhashchandra/react-concepts/src/store/todo-api-slice.jsx">
+        <metrics statements="5" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
       </file>
     </package>
     <package name="tests">

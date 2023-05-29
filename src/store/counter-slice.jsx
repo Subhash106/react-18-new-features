@@ -2,7 +2,20 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = { status: "idle", count: 0 };
 
-const asyncAPI = (amount) =>
+function customFlat(arr, output = []) {
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === "object") {
+      customFlat(arr[i], output);
+    } else {
+      output.push(arr[i]);
+    }
+  }
+
+  return output;
+}
+
+const asyncAPI = (amount) => {
+  console.log(customFlat([1, [2], [[3]], [[[4]]]]));
   new Promise((resolve, reject) => {
     if (Math.random() > 0.5) {
       setTimeout(() => {
@@ -14,6 +27,7 @@ const asyncAPI = (amount) =>
       }, 3000);
     }
   });
+};
 
 export const incrementedAsync = createAsyncThunk(
   "counter/incrementedAsync",
