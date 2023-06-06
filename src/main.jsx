@@ -8,18 +8,18 @@ import AuthContext from "./components/authentication/AuthContext";
 import { getAuthToken, getExpirationDuration } from "./utils/auth";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <AuthContext.Provider
-        value={{
-          token: getAuthToken(),
-          expirationDuration: getExpirationDuration(),
-        }}
-      >
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </AuthContext.Provider>
-    </BrowserRouter>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter>
+    <AuthContext.Provider
+      value={{
+        token: getAuthToken(),
+        expirationDuration: getExpirationDuration(),
+      }}
+    >
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </AuthContext.Provider>
+  </BrowserRouter>
+  // </React.StrictMode>
 );

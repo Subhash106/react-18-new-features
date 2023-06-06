@@ -1,15 +1,22 @@
-import { render, renderHook } from "@testing-library/react";
+import {
+  screen,
+  render,
+  renderHook,
+  waitFor,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
 import Posts from "../index";
-
-import { Provider } from "react-redux";
+import "@testing-library/jest-dom";
 
 describe("Posts", () => {
-  it.skip("Should test useFetchPostsQuery hook", () => {
-    render(
-      <Provider store={{ posts: [{ id: "test" }] }}>
-        <Posts />
-      </Provider>
-    );
+  it("Should test async", async () => {
+    render(<Posts />);
+
+    await waitForElementToBeRemoved(() => screen.queryByText("Loading..."));
+
+    expect(
+      await screen.findByRole("heading", { name: "List of posts" })
+    ).toBeInTheDocument();
 
     console.log(screen.debug());
   });
